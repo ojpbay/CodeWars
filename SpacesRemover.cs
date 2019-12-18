@@ -10,6 +10,6 @@ namespace CodeWars
         public static string NoSpace(string input)
         {
             return new string(input.ToCharArray().Where(c => c.ToString() != " ").ToArray());
-    }
+        }
     }
 }

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CodeWars": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

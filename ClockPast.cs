@@ -2,7 +2,7 @@
 
 namespace CodeWars
 {
-    public class ClockPast
+    public static class ClockPast
     {
         public static int CountAfterMidnight(int h, int m, int s)
         {

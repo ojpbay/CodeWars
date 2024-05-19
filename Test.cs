@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
-using System;
+using System.Linq;
+using System.Numerics;
 
 namespace CodeWars
 {
@@ -7,7 +8,12 @@ namespace CodeWars
     {
         public int solution(string S)
         {
-            var number = Convert.ToInt64(S, 2);
+            //var number = Convert.ToInt64(S, 2);
+            //var number = BigInteger.Parse(S, System.Globalization.NumberStyles.AllowHexSpecifier);
+            var number = ConvertToBigInt(S);
+
+            //var number = new BigInteger(28);
+
             var iterations = 0;
 
             while (number != 0)
@@ -27,7 +33,12 @@ namespace CodeWars
             return iterations;
         }
 
-        public static bool IsOdd(Int64 number)
+        public BigInteger ConvertToBigInt(string s)
+        {
+            return s.Aggregate(BigInteger.Zero, (acc, c) => acc * 2 + (c == '1' ? 1 : 0));
+        }
+
+        public static bool IsOdd(BigInteger number)
         {
             return number % 2 != 0;
         }
@@ -36,6 +47,56 @@ namespace CodeWars
     [TestFixture]
     public class Test
     {
+        [Test]
+        public void TestToBigInt1()
+        {
+            var s = "1000001111";
+            var sol = new Solution();
+            var result = sol.ConvertToBigInt(s);
+
+            Assert.True(527 == result);
+        }
+
+        [Test]
+        public void TestToBigInt2()
+        {
+            var s = "011100";
+            var sol = new Solution();
+            var result = sol.ConvertToBigInt(s);
+
+            Assert.True(28 == result);
+        }
+
+        [Test]
+        public void TestToBigInt3()
+        {
+            var s = "11";
+            var sol = new Solution();
+            var result = sol.ConvertToBigInt(s);
+
+            Assert.True(3 == result);
+        }
+
+        [Test]
+        public void TestToBigInt4()
+        {
+            var s = "10";
+            var sol = new Solution();
+            var result = sol.ConvertToBigInt(s);
+
+            Assert.True(2 == result);
+        }
+
+        [Test]
+        public void Test0()
+        {
+            var s = "1";
+            var sol = new Solution();
+            var result = sol.solution(s);
+
+            Assert.AreEqual(1, result);
+        }
+
         [Test]
         public void Test1()
         {

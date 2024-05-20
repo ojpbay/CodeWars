@@ -10,10 +10,14 @@ namespace CodeWars
         [Test]
         public void Test1()
         {
-
+            // arrange
             long[,] lst = new long[,] { { 1, 2 }, { 1, 3 }, { 1, 4 } };
-            Assert.AreEqual("(6,12)(4,12)(3,12)", Fracts.convertFrac(lst));
 
+            // act
+            var result = Fracts.convertFrac(lst);
+
+            // assert
+            Assert.That(result.Equals("(6,12)(4,12)(3,12)"));
         }
     }
 

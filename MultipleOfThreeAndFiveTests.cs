@@ -8,7 +8,8 @@ namespace CodeWars
         [Test]
         public static void MultipleOfThreeAndFiveBelow23_Returns10()
         {
-            Assert.AreEqual(23, MultipleOfThreeAndFive.Solution(10));
+            var result = MultipleOfThreeAndFive.Solution(10);
+            Assert.That(result.Equals(23));
         }
     }
 }

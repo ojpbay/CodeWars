@@ -2,21 +2,21 @@ using NUnit.Framework;
 
 namespace CodeWars
 {
+    [TestFixture]
     public class MultiplierTests
     {
-        [SetUp]
-        public void Setup()
+        [Test]
+        public void Multiply6And3_Returns18()
         {
+            var result = Multiplier.Multiply(6, 3);
+            Assert.That(result.Equals(18));
         }
 
-        [TestFixture]
-        public class Tests
+        [Test]
+        public void Multiply3And9_Returns27()
         {
-            [Test]
-            public void Multiply1()
-            {
-                Assert.AreEqual(18, Multiplier.Multiply(6, 3));
-            }
+            var result = Multiplier.Multiply(3, 9);
+            Assert.That(result.Equals(27));
         }
     }
 }

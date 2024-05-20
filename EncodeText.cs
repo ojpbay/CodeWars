@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CodeWars
 {
-    public class EncodeText
+    public static class EncodeText
     {
         public static string DuplicateEncode(string word)
         {

@@ -1,9 +1,8 @@
-﻿using System;
-using System.Numerics;
+﻿using System.Numerics;
 
 namespace CodeWars
 {
-    public class SumStringsAsNumbers
+    public static class SumStringsAsNumbers
     {
         public static string sumStrings(string a, string b)
         {

@@ -8,12 +8,7 @@ namespace CodeWars
     {
         public int solution(string S)
         {
-            //var number = Convert.ToInt64(S, 2);
-            //var number = BigInteger.Parse(S, System.Globalization.NumberStyles.AllowHexSpecifier);
             var number = ConvertToBigInt(S);
-
-            //var number = new BigInteger(28);
-
             var iterations = 0;
 
             while (number != 0)
@@ -45,7 +40,7 @@ namespace CodeWars
     }
 
     [TestFixture]
-    public class Test
+    public class MSTest
     {
         [Test]
         public void TestToBigInt1()
@@ -54,7 +49,7 @@ namespace CodeWars
             var sol = new Solution();
             var result = sol.ConvertToBigInt(s);
 
-            Assert.True(527 == result);
+            Assert.That(result == 527);
         }
 
         [Test]
@@ -64,7 +59,7 @@ namespace CodeWars
             var sol = new Solution();
             var result = sol.ConvertToBigInt(s);
 
-            Assert.True(28 == result);
+            Assert.That(result == 28);
         }
 
         [Test]
@@ -74,7 +69,7 @@ namespace CodeWars
             var sol = new Solution();
             var result = sol.ConvertToBigInt(s);
 
-            Assert.True(3 == result);
+            Assert.That(result == 3);
         }
 
         [Test]
@@ -84,7 +79,7 @@ namespace CodeWars
             var sol = new Solution();
             var result = sol.ConvertToBigInt(s);
 
-            Assert.True(2 == result);
+            Assert.That(result == 2);
         }
 
         [Test]
@@ -94,7 +89,7 @@ namespace CodeWars
             var sol = new Solution();
             var result = sol.solution(s);
 
-            Assert.AreEqual(1, result);
+            Assert.That(result == 1);
         }
 
         [Test]
@@ -104,7 +99,7 @@ namespace CodeWars
             var sol = new Solution();
             var result = sol.solution(s);
 
-            Assert.AreEqual(7, result);
+            Assert.That(result == 7);
         }
 
         [Test]
@@ -114,7 +109,7 @@ namespace CodeWars
             var sol = new Solution();
             var result = sol.solution(s);
 
-            Assert.AreEqual(5, result);
+            Assert.That(result == 5);
 
         }
 
@@ -126,7 +121,7 @@ namespace CodeWars
             var sol = new Solution();
             var result = sol.solution(s);
 
-            Assert.AreEqual(22, result);
+            Assert.That(result == 22);
         }
 
         [Test]
@@ -138,7 +133,7 @@ namespace CodeWars
             var sol = new Solution();
             var result = sol.solution(s);
 
-            Assert.AreEqual(799999, result);
+            Assert.That(result == 799999);
         }
     }
 }

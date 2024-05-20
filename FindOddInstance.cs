@@ -7,7 +7,7 @@ namespace CodeWars
     {
         public static int FindIt(int[] seq)
         {
-            return seq.Where(n => seq.Count(innerN => n == innerN) % 2 != 0).First();
+            return seq.First(n => seq.Count(innerN => n == innerN) % 2 != 0);
         }
     }
 }

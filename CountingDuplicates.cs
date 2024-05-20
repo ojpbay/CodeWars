@@ -17,37 +17,43 @@ namespace CodeWars
         [Test]
         public void CountingDuplicates1()
         {
-            Assert.AreEqual(0, CountingDuplicates.DuplicateCount(""));
+            var count = CountingDuplicates.DuplicateCount("");
+            Assert.That(count.Equals(0));
         }
 
         [Test]
         public void CountingDuplicates2()
         {
-            Assert.AreEqual(0, CountingDuplicates.DuplicateCount("abcde"));
+            var count = CountingDuplicates.DuplicateCount("abcde");
+            Assert.That(count.Equals(0));
         }
 
         [Test]
         public void CountingDuplicates3()
         {
-            Assert.AreEqual(2, CountingDuplicates.DuplicateCount("aabbcde"));
+            var count = CountingDuplicates.DuplicateCount("aabbcde");
+            Assert.That(count.Equals(2));
         }
 
         [Test]
         public void CountingDuplicates4()
         {
-            Assert.AreEqual(2, CountingDuplicates.DuplicateCount("aabBcde"), "should ignore case");
+            var count = CountingDuplicates.DuplicateCount("aabBcde");
+            Assert.That(count.Equals(2), "should ignore case");
         }
 
         [Test]
         public void CountingDuplicates5()
         {
-            Assert.AreEqual(1, CountingDuplicates.DuplicateCount("Indivisibility"));
+            var count = CountingDuplicates.DuplicateCount("Indivisibility");
+            Assert.That(count.Equals(1));
         }
 
         [Test]
         public void CountingDuplicates6()
         {
-            Assert.AreEqual(2, CountingDuplicates.DuplicateCount("Indivisibilities"), "characters may not be adjacent");
+            var count = CountingDuplicates.DuplicateCount("Indivisibilities");
+            Assert.That(count.Equals(2), "characters may not be adjacent");
         }
     }
 }

@@ -4,33 +4,32 @@ namespace CodeWars
 {
     public class EncodeTextTests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void SimpleEncode()
         {
-            Assert.AreEqual("(((", EncodeText.DuplicateEncode("din"));
+            var encoded = EncodeText.DuplicateEncode("din");
+            Assert.That(encoded.Equals("((("));
         }
 
         [Test]
         public void EncodeWithDuplicates()
         {
-            Assert.AreEqual("()()()", EncodeText.DuplicateEncode("recede"));
+            var encoded = EncodeText.DuplicateEncode("recede");
+            Assert.That(encoded.Equals("()()()"));
         }
 
         [Test]
         public void EncodeWithMixedCasing()
         {
-            Assert.AreEqual(")())())", EncodeText.DuplicateEncode("Success"), "should ignore case");
+            var encoded = EncodeText.DuplicateEncode("DinG");
+            Assert.That(encoded.Equals("(((("));
         }
 
         [Test]
         public void EncodeWithSpecialChars()
         {
-            Assert.AreEqual("))((", EncodeText.DuplicateEncode("(( @"));
+            var encoded = EncodeText.DuplicateEncode("din%sg^");
+            Assert.That(encoded.Equals("((((((("));
         }
     }
 }

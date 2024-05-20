@@ -17,39 +17,42 @@ namespace CodeWars
         }
     }
 
-
-
     [TestFixture]
     public class HumanReadableTimeTest
     {
         [Test]
         public void HumanReadableTest_0()
         {
-            Assert.AreEqual("00:00:00", TimeFormat.GetReadableTime(0));
+            var time = TimeFormat.GetReadableTime(0);
+            Assert.That(time.Equals("00:00:00"));
         }
 
         [Test]
         public void HumanReadableTest_5()
         {
-            Assert.AreEqual("00:00:05", TimeFormat.GetReadableTime(5));
+            var time = TimeFormat.GetReadableTime(5);
+            Assert.That(time.Equals("00:00:05"));
         }
 
         [Test]
         public void HumanReadableTest_60()
         {
-            Assert.AreEqual("00:01:00", TimeFormat.GetReadableTime(60));
+            var time = TimeFormat.GetReadableTime(60);
+            Assert.That(time.Equals("00:01:00"));
         }
 
         [Test]
         public void HumanReadableTest_86399()
         {
-            Assert.AreEqual("23:59:59", TimeFormat.GetReadableTime(86399));
+            var time = TimeFormat.GetReadableTime(86399);
+            Assert.That(time.Equals("23:59:59"));
         }
 
         [Test]
         public void HumanReadableTest_359999()
         {
-            Assert.AreEqual("99:59:59", TimeFormat.GetReadableTime(359999));
+            var time = TimeFormat.GetReadableTime(359999);
+            Assert.That(time.Equals("99:59:59"));
         }
     }
 }

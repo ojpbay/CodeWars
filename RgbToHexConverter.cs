@@ -19,21 +19,16 @@ namespace CodeWars
 
         private static string Format(int input)
         {
-            input = (input < 0 ? 0 : input > 255 ? 255 : input);
+            input = Math.Clamp(input, 0, 255);
 
-            var i = input.ToString("X");
+            var hex = input.ToString("X");
 
-            if (i == "0")
+            if (hex.Length == 1)
             {
-                return "00";
+                hex = $"0{hex}";
             }
 
-            if (i.Length == 1)
-            {
-                i = string.Format($"0{i}");
-            }
-
-            return i;
+            return hex;
         }
     }
 }

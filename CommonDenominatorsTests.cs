@@ -8,7 +8,7 @@ namespace CodeWars
     {
 
         [Test]
-        public void Test1()
+        public void GivenMultipleFractions_ReturnAllWithCommonDenominator()
         {
             // arrange
             long[,] lst = new long[,] { { 1, 2 }, { 1, 3 }, { 1, 4 } };

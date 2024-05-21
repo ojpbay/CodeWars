@@ -8,7 +8,7 @@ namespace CodeWars.Globalisation
         [Theory]
         [TestCase("en-GB", 1234567.89, "1,234,567.89")]
         [TestCase("en-US", 1234567.89, "1,234,567.890")]
-        [TestCase("fr-FR", 1234567.89, "1 234 567,890")]
+        [TestCase("fr-FR", 1234567.89, "1 234 567,890")]
         [TestCase("it-IT", 1234567.89, "1.234.567,890")]
 
         public void GetLocalisedNumber(string locale, decimal number, string expected)
@@ -33,7 +33,7 @@ namespace CodeWars.Globalisation
         [Theory]
         [TestCase("en-GB", 1234567.123456, "1,234,567.123456%")]
         [TestCase("en-US", 1234567.123456, "1,234,567.123456%")]
-        [TestCase("fr-FR", 1234567.123456, "1 234 567,123456%")]
+        [TestCase("fr-FR", 1234567.123456, "1 234 567,123456%")]
         [TestCase("it-IT", 1234567.123456, "1.234.567,123456%")]
         [TestCase("pt-BR", 1234567.123456, "1.234.567,123456%")]
 

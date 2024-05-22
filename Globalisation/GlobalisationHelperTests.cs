@@ -14,7 +14,7 @@ namespace CodeWars.Globalisation
         public void GetLocalisedNumber(string locale, decimal number, string expected)
         {
             var result = GlobalisationHelper.GetLocalisedValue(number, locale);
-            Assert.That(result.Equals(expected));
+            Assert.That(result, Is.EqualTo(expected));
         }
 
         [Theory]
@@ -27,7 +27,7 @@ namespace CodeWars.Globalisation
         public void GetLocalisedPercentageNumber(string locale, decimal number, string expected)
         {
             var result = GlobalisationHelper.GetLocalisedPercentageValue(number, locale, "#.######%");
-            Assert.That(result.Equals(expected));
+            Assert.That(result, Is.EqualTo(expected));
         }
 
         [Theory]
@@ -40,7 +40,7 @@ namespace CodeWars.Globalisation
         public void GetLocalisedPercentageNumberWithThousandSeparator(string locale, decimal number, string expected)
         {
             var result = GlobalisationHelper.GetLocalisedPercentageValue(number, locale, "#,###.######%");
-            Assert.That(result.Equals(expected));
+            Assert.That(result, Is.EqualTo(expected));
         }
     }
 }

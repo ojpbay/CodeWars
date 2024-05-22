@@ -17,7 +17,7 @@ namespace CodeWars
             var result = Fracts.convertFrac(lst);
 
             // assert
-            Assert.That(result.Equals("(6,12)(4,12)(3,12)"));
+            Assert.That(result, Is.EqualTo("(6,12)(4,12)(3,12)"));
         }
     }
 

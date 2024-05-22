@@ -9,14 +9,14 @@ namespace CodeWars
         public void Multiply6And3_Returns18()
         {
             var result = Multiplier.Multiply(6, 3);
-            Assert.That(result.Equals(18));
+            Assert.That(result, Is.EqualTo(18));
         }
 
         [Test]
         public void Multiply3And9_Returns27()
         {
             var result = Multiplier.Multiply(3, 9);
-            Assert.That(result.Equals(27));
+            Assert.That(result, Is.EqualTo(27));
         }
     }
 }

@@ -16,7 +16,7 @@ namespace CodeWars
             var result = MeanSquareError.Solution(first, second);
 
             // assert
-            Assert.That(result.Equals(9));
+            Assert.That(result, Is.EqualTo(9));
         }
 
         [Test]
@@ -30,7 +30,7 @@ namespace CodeWars
             var result = MeanSquareError.Solution(first, second);
 
             // assert
-            Assert.That(result.Equals(16.5));
+            Assert.That(result, Is.EqualTo(16.5));
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace CodeWars
             var result = MeanSquareError.Solution(first, second);
 
             // assert
-            Assert.That(result.Equals(1));
+            Assert.That(result, Is.EqualTo(1));
         }
     }
 }

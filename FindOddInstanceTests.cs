@@ -14,7 +14,7 @@ namespace CodeWars
             var result = FindOddInstance.FindIt(sequence);
 
             // assert
-            Assert.That(result.Equals(5));
+            Assert.That(result, Is.EqualTo(5));
         }
     }
 }

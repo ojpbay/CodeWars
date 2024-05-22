@@ -14,7 +14,7 @@ namespace CodeWars
             var result = SpacesRemover.NoSpace(source);
 
             // assert
-            Assert.That(result.Equals("88Bifk8hB8BB8BBBB888chl8BhBfd"));
+            Assert.That(result, Is.EqualTo("88Bifk8hB8BB8BBBB888chl8BhBfd"));
         }
 
         [Test]
@@ -27,7 +27,7 @@ namespace CodeWars
             var result = SpacesRemover.NoSpace(source);
 
             // assert
-            Assert.That(result.Equals("8j8mBliB8gimjB8B8jlB"));
+            Assert.That(result, Is.EqualTo("8j8mBliB8gimjB8B8jlB"));
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace CodeWars
             var result = SpacesRemover.NoSpace(source);
 
             // assert
-            Assert.That(result.Equals("8aaaaaddddr"));
+            Assert.That(result, Is.EqualTo("8aaaaaddddr"));
         }
     }
 }

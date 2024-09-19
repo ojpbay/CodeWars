@@ -18,22 +18,9 @@ namespace CodeWars
          * 
          */
 
-        public static int lonelyinteger(List<int> integers)
+        public static int lonelyinteger(List<int> a)
         {
-            Dictionary<int, int> dict = new Dictionary<int, int>();
-            foreach (int i in integers)
-            {
-                if (dict.ContainsKey(i))
-                {
-                    dict[i]++;
-                }
-                else
-                {
-                    dict.Add(i, 1);
-                }
-            }
-
-            return dict.FirstOrDefault(x => x.Value == 1).Key;
+            return a.GroupBy(x => x).Where(x => x.Count() == 1).Select(x => x.Key).First();
         }
 
     }

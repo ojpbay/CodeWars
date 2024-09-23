@@ -16,6 +16,9 @@ namespace CodeWars
 
         public static int diagonalDifference(List<List<int>> arr)
         {
+            if (arr[0].Count != arr.Count)
+                throw new ArgumentException("Matrix must be square");
+
             int firstDiagonalSum = 0;
             int secondDiagonalSum = 0;
 

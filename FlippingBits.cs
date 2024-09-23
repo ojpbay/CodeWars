@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
-using System.Text;
+using System.Linq;
 
 namespace CodeWars
 {
@@ -15,28 +15,9 @@ namespace CodeWars
 
         public static long flippingBits(long n)
         {
-            var binary = Convert.ToString(n, 2);
-
-            while (binary.Length < 32)
-            {
-                binary = "0" + binary;
-            }
-
-            var sb = new StringBuilder();
-
-            foreach (var bit in binary.ToCharArray())
-            {
-                if (bit == '0')
-                {
-                    sb.Append("1");
-                }
-                else
-                {
-                    sb.Append("0");
-                }
-            }
-
-            return Convert.ToInt64(sb.ToString(), 2);
+            var binary = Convert.ToString(n, 2).PadLeft(32, '0');
+            var t = binary.ToString().Select(x => x == '0' ? "1" : "0").Aggregate("", (current, bit) => current + bit);
+            return Convert.ToInt64(t, 2);
         }
     }
 

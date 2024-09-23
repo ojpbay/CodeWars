@@ -23,16 +23,10 @@ namespace CodeWars
             int secondDiagonalSum = 0;
 
             // get first diagonal - top left to bottom right
-            for (int row = 0; row < arr.Count; row++)
+            for (int i = 0; i < arr.Count; i++)
             {
-                firstDiagonalSum += arr[row][row];
-            }
-
-            // get second diagonal - bottom right to top left
-            var columns = arr[0].Count - 1;
-            for (int col = columns; col >= 0; col--)
-            {
-                secondDiagonalSum += arr[columns - col][col];
+                firstDiagonalSum += arr[i][i];
+                secondDiagonalSum += arr[i][arr[i].Count - i - 1];
             }
 
             return Math.Abs(firstDiagonalSum - secondDiagonalSum);

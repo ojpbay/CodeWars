@@ -16,7 +16,23 @@ namespace CodeWars
 
         public static int diagonalDifference(List<List<int>> arr)
         {
-            throw new NotImplementedException();
+            int firstDiagonalSum = 0;
+            int secondDiagonalSum = 0;
+
+            // get first diagonal - top left to bottom right
+            for (int row = 0; row < arr.Count; row++)
+            {
+                firstDiagonalSum += arr[row][row];
+            }
+
+            // get second diagonal - bottom right to top left
+            var columns = arr[0].Count - 1;
+            for (int col = columns; col >= 0; col--)
+            {
+                secondDiagonalSum += arr[columns - col][col];
+            }
+
+            return Math.Abs(firstDiagonalSum - secondDiagonalSum);
         }
     }
 

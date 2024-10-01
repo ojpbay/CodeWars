@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CodeWars
 {
@@ -16,7 +17,14 @@ namespace CodeWars
 
         public static List<int> countingSort(List<int> arr)
         {
-            throw new System.NotImplementedException();
+            var frequency = Enumerable.Repeat(0, 100).ToList();
+
+            foreach (var item in arr)
+            {
+                frequency[item]++;
+            }
+
+            return frequency.Select(x => x).ToList();
         }
     }
 

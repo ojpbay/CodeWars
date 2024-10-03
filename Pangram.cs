@@ -7,24 +7,24 @@ namespace CodeWars
     public static class PangramResult
     {
         /*
-     * Complete the 'pangrams' function below.
-     *
-     * The function is expected to return a STRING.
-     * The function accepts STRING s as parameter.
-     */
+         * Complete the 'pangrams' function below.
+         *
+         * https://www.hackerrank.com/challenges/one-month-preparation-kit-pangrams/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=one-month-preparation-kit&playlist_slugs%5B%5D=one-month-week-one
+         *
+         * The function is expected to return a STRING.
+         * The function accepts STRING s as parameter.
+         */
 
         public static string pangrams(string s)
         {
-            var alpha = new List<string>() { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
-            foreach (var letter in s.ToLowerInvariant().ToCharArray().Where(x => x != ' '))
+            var result = new HashSet<string>();
+            foreach (var letter in s.ToLowerInvariant().Where(x => x != ' '))
             {
-                if (alpha.Contains(letter.ToString()))
-                {
-                    alpha.Remove(letter.ToString());
-                }
+                if (char.IsLetter(letter))
+                    result.Add(letter.ToString());
             }
 
-            return alpha.Count() > 0 ? "not pangram" : "pangram";
+            return result.Count() == 26 ? "pangram" : "not pangram";
         }
 
     }

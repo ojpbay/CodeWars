@@ -18,13 +18,13 @@ namespace CodeWars
         public static string pangrams(string s)
         {
             var result = new HashSet<string>();
-            foreach (var letter in s.ToLowerInvariant().Where(x => x != ' '))
+            foreach (var letter in s.ToLowerInvariant())
             {
                 if (char.IsLetter(letter))
                     result.Add(letter.ToString());
             }
 
-            return result.Count() == 26 ? "pangram" : "not pangram";
+            return result.Count == 26 ? "pangram" : "not pangram";
         }
 
     }

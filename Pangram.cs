@@ -51,5 +51,15 @@ namespace CodeWars
             var result = PangramResult.pangrams(input);
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void NotPangramWithPunctuation()
+        {
+            var input = "We, as it was, promptly judged antique ivory buckles for the prize!?";
+            var expected = "not pangram";
+
+            var result = PangramResult.pangrams(input);
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 }

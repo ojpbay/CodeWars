@@ -16,11 +16,11 @@ namespace CodeWars
 
         public static int migratoryBirds(List<int> arr)
         {
-            var groups = arr.GroupBy(x => x);
-            var highestCount = groups.Max(x => x.Count());
-            var highestGroups = groups.Where(x => x.Count() == highestCount).OrderBy(x => x.Key);
-
-            return highestGroups.First().Key;
+            return arr.GroupBy(x => x)
+                    .OrderByDescending(x => x.Count())
+                    .ThenBy(x => x.Key)
+                    .First()
+                    .Key;
         }
 
         [TestFixture]

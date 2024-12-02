@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace CodeWars
 {
@@ -16,7 +15,7 @@ namespace CodeWars
                 else if (scores[i] > max) { max = scores[i]; maxBrokenCount++; }
             }
 
-            return new List<int> { maxBrokenCount, minBrokenCount };
+            return [maxBrokenCount, minBrokenCount];
         }
     }
 
@@ -26,21 +25,21 @@ namespace CodeWars
     public class BreakTheRecordsSolution
     {
         [Test]
-        public void Test1()
+        public void HighestScoreBroken2TimesAndLowestScoreBroken4Times()
         {
-            int[] integers = { 10, 5, 20, 20, 4, 5, 2, 25, 1 };
+            List<int> scores = [10, 5, 20, 20, 4, 5, 2, 25, 1];
 
-            var result = BreakTheRecordsResult.breakingRecords(integers.ToList());
-            Assert.That(result[0], Is.EqualTo(2)); // number of times highest score was broken
-            Assert.That(result[1], Is.EqualTo(4)); // number of times lowest score was broken
+            var result = BreakTheRecordsResult.breakingRecords(scores);
+            Assert.That(result[0], Is.EqualTo(2));
+            Assert.That(result[1], Is.EqualTo(4));
         }
 
         [Test]
-        public void Test2()
+        public void HighestScoreBroken4TimesAndLowestScoreBrokenZeroTimes()
         {
-            int[] integers = { 3, 4, 21, 36, 10, 28, 35, 5, 24, 42 };
+            List<int> scores = [3, 4, 21, 36, 10, 28, 35, 5, 24, 42];
 
-            var result = BreakTheRecordsResult.breakingRecords(integers.ToList());
+            var result = BreakTheRecordsResult.breakingRecords(scores);
             Assert.That(result[0], Is.EqualTo(4));
             Assert.That(result[1], Is.EqualTo(0));
         }

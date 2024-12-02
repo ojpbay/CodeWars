@@ -8,28 +8,15 @@ namespace CodeWars
     {
         public static List<int> breakingRecords(List<int> scores)
         {
-            int min = scores[0];
-            int max = scores[0];
-
-            int minBrokenCount = 0;
-            int maxBrokenCount = 0;
+            int min = scores[0], max = scores[0], minBrokenCount = 0, maxBrokenCount = 0;
 
             for (int i = 1; i < scores.Count; i++)
             {
-                if (scores[i] < min)
-                {
-                    min = scores[i];
-                    minBrokenCount++;
-                }
-
-                if (scores[i] > max)
-                {
-                    max = scores[i];
-                    maxBrokenCount++;
-                }
+                if (scores[i] < min) { min = scores[i]; minBrokenCount++; }
+                else if (scores[i] > max) { max = scores[i]; maxBrokenCount++; }
             }
 
-            return new List<int>() { maxBrokenCount, minBrokenCount };
+            return new List<int> { maxBrokenCount, minBrokenCount };
         }
     }
 

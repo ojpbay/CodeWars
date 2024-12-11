@@ -59,5 +59,23 @@ namespace CodeWars
             var result = CountingValleysResult.countingValleys(path.Length, path);
             Assert.That(result, Is.EqualTo(1));
         }
+
+        [Test]
+        public void TestOfTwoValleys()
+        {
+            var path = "DDUUDDUU";
+
+            var result = CountingValleysResult.countingValleys(path.Length, path);
+            Assert.That(result, Is.EqualTo(2));
+        }
+
+        [Test]
+        public void TestOfZeroValleys()
+        {
+            var path = "UUUUDDDD";
+
+            var result = CountingValleysResult.countingValleys(path.Length, path);
+            Assert.That(result, Is.EqualTo(0));
+        }
     }
 }

@@ -46,5 +46,13 @@ namespace CodeWars
 
             Assert.That(result, Is.EqualTo(0));
         }
+
+        [Test]
+        public void ThreePotionsNeeded()
+        {
+            var result = HurdleRaceResult.hurdleRace(4, new List<int> { 1, 6, 3, 5, 7 });
+
+            Assert.That(result, Is.EqualTo(3));
+        }
     }
 }

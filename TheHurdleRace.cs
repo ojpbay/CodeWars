@@ -17,14 +17,9 @@ namespace CodeWars
 
         public static int hurdleRace(int k, List<int> height)
         {
-            var highest = height.MaxBy(x => x);
+            var highest = height.Max();
 
-            if (highest <= k)
-            {
-                return 0;
-            }
-
-            return highest - k;
+            return highest <= k ? 0 : highest - k;
         }
     }
 

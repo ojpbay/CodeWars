@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using System.Linq;
 
 namespace CodeWars
 {
@@ -10,28 +9,20 @@ namespace CodeWars
          */
         public static int getMoneySpent(int[] keyboards, int[] drives, int b)
         {
-            // get the most expensive keyboard
-            var maxKeyboard = keyboards.Where(k => k < b).OrderByDescending(x => x).FirstOrDefault();
-
-            // get the most expensive drive you can afford
-            var maxAffordableDrive = drives.Where(d => d <= b - maxKeyboard).OrderByDescending(x => x).FirstOrDefault();
-
-            // get the most expensive drive
-            var maxDrive = drives.Where(d => d < b).OrderByDescending(x => x).FirstOrDefault();
-
-            // get the most expensive keyboard you can afford
-            var maxAffordableKeyboard = keyboards.Where(k => k <= b - maxDrive).OrderByDescending(x => x).FirstOrDefault();
-
-            var maxKeyboardTotal = maxKeyboard + maxAffordableDrive;
-            var maxDriveTotal = maxDrive + maxAffordableKeyboard;
-
-            if (maxAffordableDrive == 0 || maxAffordableKeyboard == 0)
+            var highestTotal = -1;
+            foreach (var keyboard in keyboards)
             {
-                return -1;
+                foreach (var drive in drives)
+                {
+                    var total = keyboard + drive;
+                    if (total <= b && total > highestTotal)
+                    {
+                        highestTotal = total;
+                    }
+                }
             }
+            return highestTotal;
 
-
-            return maxKeyboardTotal > maxDriveTotal ? maxKeyboardTotal : maxDriveTotal;
         }
     }
 

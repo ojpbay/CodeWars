@@ -11,8 +11,8 @@ namespace CodeWars
          *
          * The function is expected to return a STRING.
          * The function accepts following parameters:
-         *  1. INTEGER k
-         *  2. INTEGER_ARRAY a
+         *  1. INTEGER k - the number of students required to be present to avoid class cancellation
+         *  2. INTEGER_ARRAY a - the arrival times of the students (negative values indicate the student arrived early)
          */
 
         public static string AngryProfessor(int k, List<int> a)

@@ -25,11 +25,35 @@ namespace CodeWars
     public class AngryProfessorSolution
     {
         [Test]
-        public void ThreeStudentsRequired_EnoughStudentsArriveOnTime_ClassIsNotCancelled()
+        public void ThreeStudentsRequired_ThreeStudentsArriveOnTime_ClassIsNotCancelled()
         {
             var k = 3;
             var a = new List<int> { -2, -1, 0, 1, 2 };
             var expected = "NO";
+
+            var result = AngryProfessorResult.AngryProfessor(k, a);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TwoStudentsRequired_ThreeStudentsArriveOnTime_ClassIsNotCancelled()
+        {
+            var k = 2;
+            var a = new List<int> { -2, -1, 0, 1, 2 };
+            var expected = "NO";
+
+            var result = AngryProfessorResult.AngryProfessor(k, a);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void FiveStudentsRequired_FourStudentsArriveOnTime_ClassIsCancelled()
+        {
+            var k = 5;
+            var a = new List<int> { -2, -1, 0, 0, 2, 3 };
+            var expected = "YES";
 
             var result = AngryProfessorResult.AngryProfessor(k, a);
 

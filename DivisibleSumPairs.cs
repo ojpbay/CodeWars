@@ -39,14 +39,23 @@ namespace CodeWars
     public class DivisibleSumPairsSolution
     {
         [Test]
-        public void Test1()
+        public void DivisorOf3_Returns5DivisiblePairs()
         {
-            var n = 6;
             var k = 3;
             var ar = new List<int> { 1, 3, 2, 6, 1, 2 };
 
-            var result = DivisibleSumPairsResult.divisibleSumPairs(n, k, ar);
+            var result = DivisibleSumPairsResult.divisibleSumPairs(ar.Count, k, ar);
             Assert.That(result, Is.EqualTo(5));
+        }
+
+        [Test]
+        public void DivisorOf4_Returns2DivisiblePairs()
+        {
+            var k = 4;
+            var ar = new List<int> { 1, 4, 6, 2, 3 };
+
+            var result = DivisibleSumPairsResult.divisibleSumPairs(ar.Count, k, ar);
+            Assert.That(result, Is.EqualTo(2));
         }
     }
 }

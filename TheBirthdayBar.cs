@@ -18,21 +18,15 @@ namespace CodeWars
          */
         public static int birthday(List<int> s, int d, int m)
         {
-            int total = 0;
+            var total = 0;
 
-            for (int i = 0; i < s.Count; i++)
+            // add 1 to iterator to account for 0-based index
+            for (int i = 0; i < s.Count - m + 1; i++)
             {
-                try
+                var sum = s.Skip(i).Take(m).Sum();
+                if (sum == d)
                 {
-                    var piece = s.Slice(i, m);
-                    if (piece.Sum() == d)
-                    {
-                        total++;
-                    }
-                }
-                catch (ArgumentException)
-                {
-                    break;
+                    total++;
                 }
             }
 
@@ -41,7 +35,7 @@ namespace CodeWars
     }
 
     [TestFixture]
-    public class TheBirthdayBaSolution
+    public class TheBirthdayBarSolution
     {
         [Test]
         public void Sum3_Length2_Returns2Possibilities()
